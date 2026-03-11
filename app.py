@@ -9,8 +9,8 @@ CORS(app) # Allows your frontend to talk to your backend safely
 # --- TiDB Database Configuration ---
 # Replace these with your actual TiDB credentials!
 DB_HOST = "gateway01.ap-southeast-1.prod.aws.tidbcloud.com"
-DB_USER = "your_tidb_user.root"
-DB_PASSWORD = "YOUR_TIDB_PASSWORD"
+DB_USER = os.getenv("DB_USER", "your_db_username")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "your_db_password")
 DB_NAME = "Saffron_Cultivation"
 DB_PORT = 4000
 
